@@ -43,7 +43,7 @@ class breveage {
     }
     public function getInfo() {
 
-        return $this->name. "This " . $this->color. " breveage is ". $this-> temperature ;;
+        return $this->name. "This " . $this->color. " breveage is ". $this-> temperature ;
 
     }
     
