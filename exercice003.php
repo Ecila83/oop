@@ -29,9 +29,26 @@ class breveage {
         $this->temperature = $temperature;
     }
 
+    public function getName(){
+        return $this->name;
+    }
+    public function getColor(){
+        return $this->color;
+    }
+    public function getPrice(){
+        return $this->price;
+    }
+    public function getTemperature(){
+        return $this->temperature;
+    }
+
+    public function setColor(string $color):void{
+         $this->color = $color;
+    }
+
     public function getInfo() {
 
-        echo $this->name. "This " . $this-> color. "breveage is ". $this-> temperature ;
+        return $this->name. "This " . $this->color. "breveage is ". $this-> temperature ;
 
     }
 
@@ -42,22 +59,37 @@ class breveage {
 
 
 class beer extends breveage{
-    public $alcool;
+    private $alcool;
     public function __construct(string $name, string $color, float $price, string $temperature, float $alcool){
 
         parent::__construct($name,$color, $price, $temperature);
 
         $this->alcool = $alcool;
     }
+    public function getAlcool(){
+        return $this->alcool;
+    }
 
     public function getAlcoolPercentage(){
-        echo $this->name. "alcohol percentage ". $this->alcool."%";
+        return $this->getName(). "alcohol percentage ". $this->getAlcool()."%";
     }
+
+    public function beerInfo(){
+        return "Hello I'm new " . $this->getName() .  "and I have a color ". $this->getcolor();
+        }
 
 }
 
+
+
 $beer1 = new beer("Duvel ","blond ",3.50,"Cold ", 8.5);
 
-$beer1->getInfo()."<br>";
-$beer1->getAlcoolPercentage()."<br>";
+echo $beer1->getInfo()."<br>";
+echo $beer1->getAlcoolPercentage()."<br>";
+
+$beer1->setColor("light");
+echo $beer1->beerInfo();
+
+
+
 print_r($beer1);
